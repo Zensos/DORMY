@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+.badge {
+    @apply flex items-center gap-2; /* Adds spacing between elements */
+}
+
+.badge > svg {
+    @apply inline-block p-1 text-xs font-semibold bg-orange-500/30 
+                  text-orange-500 rounded-full w-8 h-8; /* Ensures consistent size */
+}
+
+.badge > p {
+    @apply text-xs font-bold text-orange-500; /* Removed unnecessary rounding */
+}
+
+table {
+    font-family: "Roboto", sans-serif; /* If you want Roboto for tables only */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 0.5px solid #f4f3f8;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f3f8;
+}
+
+#map
+    > div.maplibregl-control-container
+    > div.maplibregl-ctrl-bottom-right
+    > details {
+    display: hidden;
+}
+
+h3 {
+    @apply text-xl font-thin;
+}
+
+.iconic {
+    @apply inline-flex items-center justify-center gap-2;
+}
+
+.iconic-disabled {
+    @apply line-through;
+    opacity: 40%;
+}
