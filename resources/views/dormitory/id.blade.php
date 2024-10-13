@@ -429,9 +429,9 @@
             </div>
 
             <div class="flex flex-col items-center gap-2">
-                <a href="tel:0842585799"
+                <a href="tel:0999999999"
                     class="w-full text-center px-5 py-2 bg-blue-500 text-white rounded-md">จองเลย!</a>
-                <a href="tel:0842585799" class="w-full text-center px-5 py-2 bg-green-500 text-white rounded-md">
+                <a href="https://line.me" class="w-full text-center px-5 py-2 bg-green-500 text-white rounded-md">
                     @LINE
                 </a>
             </div>
