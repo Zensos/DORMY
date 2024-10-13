@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/Zensos/DORMY?tab=readme-ov-file" target="_blank"><img src="https://i.imgur.com/kiTfAKp.png" width="400" alt="DormyLogo"></a></p>
+<p align="center"><a href="https://github.com/Zensos/DORMY?tab=readme-ov-file" target="_blank"><img src="https://i.imgur.com/gTSt5l8.png" width="400" alt="DormyLogo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
