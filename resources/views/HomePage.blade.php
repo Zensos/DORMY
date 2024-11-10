@@ -1,24 +1,28 @@
 <x-layout>
-
     <div>
         <img class="bg-fixed object-cover w-[1920px] h-[923px]" src="/preview.jpeg" alt="preview">
     </div>
-    <div class="relative flex flex-col min-h-dvh w-full max-w-[100rem] space-y-5 px-5" x-data="{ isShow: false }">
-        <div class="self-start w-full sm:self-start flex gap-2 h-16 mt-10 ">
-            <div
-                class="flex flex-shrink-0 items-center justify-between bg-[#F4F3F8] h-full px-2 w-2/3 sm:w-[500px] rounded-md">
-                <input class="bg-[#F4F3F8] border-none focus:outline-none focus:ring-0 rounded-md" type="text"
-                    placeholder="Search">
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-search">
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="m21 21-4.3-4.3" />
-                </svg>
-            </div>
+    <div class="relative flex flex-col min-h-dvh w-full max-w-[100rem] space-y-5 px-5" x-data="{ isShow: false }">
+        <div class="flex items-center mt-10 gap-2">
+            <form method="GET" action="{{ route('home') }}" class="w-fit flex gap-2 h-16">
+                <div class="flex items-center justify-between bg-[#F4F3F8] h-full px-2 w-2/3 sm:w-[500px] rounded-md">
+                    <input class="bg-[#F4F3F8] border-none focus:outline-none focus:ring-0 rounded-md w-full"
+                        type="text" name="search" placeholder="Search" value="{{ request('search') }}" />
+
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-search">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.3-4.3" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
             <button @click="isShow = !isShow"
-                class="w-fit h-full py-2 px-5 bg-black text-white rounded-md inline-flex items-center gap-2">
+                class="w-fit h-16 py-2 px-5 bg-black text-white rounded-md inline-flex items-center gap-2">
                 Filter
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -35,16 +39,17 @@
                 </svg>
             </button>
         </div>
+
+
         <h1 class="text-2xl sm:text-3xl font-bold text-start">Suggestion Dormitory KMITL</h1>
-        <section x-transition class="flex w-full gap-10">
+
+        <section class="flex w-full gap-10">
             <section class="w-full h-full space-y-5 mb-10">
-                <div
-                    class="self-start space-y-5 rounded-md max-h-[1700px] h-full bg-[#F4F3F8] p-4 sm:p-8 overflow-scroll">
+                <div class="space-y-5 max-h-[1700px] h-full bg-[#F4F3F8] p-4 sm:p-8 overflow-scroll rounded-md">
                     @foreach ($dormitoryCategories as $dormitoryCategory)
                         <x-dormitory-category :id="$dormitoryCategory->id" :title="$dormitoryCategory->title" :description="$dormitoryCategory->description" />
                     @endforeach
                 </div>
-
             </section>
 
             <section x-show="isShow" x-cloak x-transition

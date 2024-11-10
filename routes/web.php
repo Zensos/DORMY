@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\DormitoryCategory;
 use App\Http\Controllers\ProfileController;
@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\GoogleSocialiteController;
 
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/dormitory/{id}', [DormitoryCategory::class, 'getDormitoryCategoryById']);
-Route::get('/favorite', [FavoriteController::class, 'index']);
+Route::get('/', [SuggestionController::class, 'displayHomePage'])->name('home');
+Route::get('/dormitory/{id}', [SuggestionController::class, 'displayDormitoryDetailPage'])->name('dormitory.id');
 
+
+
+
+Route::get('/favorite', [FavoriteController::class, 'index']);
 Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
 Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']); 
 
